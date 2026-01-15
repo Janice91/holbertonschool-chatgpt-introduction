@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Background Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the button to change the background color</h1>
+    <button id="colorButton">Change Color</button>
+
+    <script>
+        // S'assurer que le DOM est chargé avant d'ajouter l'événement
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("colorButton").addEventListener("click", function() {
+                changeBackgroundColor();
+            });
+        });
+
+        function changeBackgroundColor() {
+            // Générer une couleur aléatoire
+            var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            // Changer la couleur de fond du body
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
